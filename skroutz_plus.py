@@ -88,17 +88,17 @@ def main(driver):
         f"""
 Total orders found : {len(order_urls)}
 Total items checked : {total_items}
-Items equal/over 20 Euros : {orders_over_twenty}
+Items equal/over 20 € : {orders_over_twenty}
 
-With the (NEW) 17 Euros subscription you would earn in shipping : {orders_over_twenty * 3 - 17} Euros
-With the (NEW) 20 Euros subscription you would earn in shipping : {orders_over_twenty * 3 - 20} Euros
+With the (NEW) 17 € subscription you would earn in shipping : {orders_over_twenty * 3 - 17} €
+With the (NEW) 20 € subscription you would earn in shipping : {orders_over_twenty * 3 - 20} €
 
-Rough estimate of the (OLD) 17 Euros subscription:
-(Total items * 3 euros shipping)
+Rough estimate of the (OLD) 17 € subscription:
+(Total items * 3 € shipping)
 Shipping earned : {(total_items * 3) - 17}
 
-Total spent : {total_spent}
-Average spent per item : {total_spent / len(order_urls)}
+Total € spent : {total_spent:.2f} €
+Average € spent per item : {(total_spent / len(order_urls)):.2f} €
     """
     )
     return
