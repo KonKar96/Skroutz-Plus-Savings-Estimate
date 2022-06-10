@@ -16,7 +16,11 @@
 Μια σύγχρονη έκδοση Python(3.5+)
 
 ```sh
-pip install requirements.txt
+pip install selenium
+pip install webdriver_manager
+or
+pip install -r requirements.txt
+
 python skroutz_plus.py
 ```
 
