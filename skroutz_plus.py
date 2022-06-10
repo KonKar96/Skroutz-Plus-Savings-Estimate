@@ -82,21 +82,23 @@ def main(driver):
                 total_spent += price
             except Exception:
                 continue
+
     print("{}[2J{}[;H".format(chr(27), chr(27)))
-    print(f"Total orders found : {len(order_urls)}")
-    print(f"Total items checked : {total_items}")
-    print(f"Items equal/over 20 Euros : {orders_over_twenty}\n")
     print(
-        f"With the (NEW) 17 Euros subscription you would earn in shipping : {orders_over_twenty * 3 - 17} Euros \n"
-    )
-    print(
-        f"With the (NEW) 20 Euros subscription you would earn in shipping : {orders_over_twenty * 3 - 20} Euros \n"
-    )
-    print(
-        f"""Rough estimate of the (OLD) 17 Euros subscription :
-    (Total items * 3 euros shipping)
-    Total spent : {total_spent}
-    Shipping earned : {(total_items * 3) - 17}
+        f"""
+Total orders found : {len(order_urls)}
+Total items checked : {total_items}
+Items equal/over 20 Euros : {orders_over_twenty}
+
+With the (NEW) 17 Euros subscription you would earn in shipping : {orders_over_twenty * 3 - 17} Euros
+With the (NEW) 20 Euros subscription you would earn in shipping : {orders_over_twenty * 3 - 20} Euros
+
+Rough estimate of the (OLD) 17 Euros subscription:
+(Total items * 3 euros shipping)
+Shipping earned : {(total_items * 3) - 17}
+
+Total spent : {total_spent}
+Average spent per item : {total_spent / len(order_urls)}
     """
     )
     return
