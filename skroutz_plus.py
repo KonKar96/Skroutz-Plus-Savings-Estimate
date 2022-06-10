@@ -14,15 +14,20 @@ def find(xpath):
         element.location_once_scrolled_into_view
         return element
     except Exception as e:
-        print(e)
         return None
 
 
 def main(driver):
     orders_over_twenty = 0
     driver.get("https://www.skroutz.gr/account/orders?tab=ecommerce_orders")
-    input("Login and press enter to continue...\n")
-    find("//div[@class='order-list-card ']")
+    print("{}[2J{}[;H".format(chr(27), chr(27)))
+    while True:
+        element = find("//div[@class='order-list-card ']")
+        if element != None:
+            print("Logged in!")
+            break
+        print("Waiting for log in...")
+
     order_urls = []
     while True:
         orders = driver.find_elements(
@@ -56,7 +61,7 @@ def main(driver):
     total_spent = 0
     for order_url in order_urls:
         driver.get(order_url)
-        find("//div[@class='suborder-wrap']")
+        print(find("//h1[@class='page-title']").text)
         items = driver.find_elements(By.XPATH, "//div[@class='suborder-wrap']")
         for item in items:
             try:
@@ -77,7 +82,7 @@ def main(driver):
                 total_spent += price
             except Exception:
                 continue
-
+    print("{}[2J{}[;H".format(chr(27), chr(27)))
     print(f"Total orders found : {len(order_urls)}")
     print(f"Total items checked : {total_items}")
     print(f"Items equal/over 20 Euros : {orders_over_twenty}\n")
