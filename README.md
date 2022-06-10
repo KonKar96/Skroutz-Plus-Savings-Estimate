@@ -22,15 +22,25 @@ python skroutz_plus.py
 
 Το script κάνει χρήση του selenium στον προσωπικό μας Chrome ώστε να κάνει bypass το block της google για login.
 Τρέχουμε το script, κάνουμε login στο παράθυρο που θα ανοίξει (ίσως να είστε ήδη logged in) και όταν βλέπουμε την αρχική των παραγγελιών,πατάμε enter στο τερματικό  για να ξεκινήσει το scrape.
+
 Τέλος θα μας εμφανιστούν τα εξής νούμερα:
 
 (Παράδειγμα του λογαριασμού μου)
+
 Total orders found : 32
+
 Total items checked : 71
+
 Items equal/over 20 Euros : 15
+
 With the (NEW) 17 Euros subscription you would earn in shipping : 28 Euros
+
 With the (NEW) 20 Euros subscription you would earn in shipping : 25 Euros
+
 Rough estimate of the (OLD) 17 Euros subscription :
+
 (Total items * 3 euros shipping)
+
 Total spent : 1307.8100000000006
+
 Shipping earned : 196
